@@ -11,4 +11,8 @@
     <td><%= @kitten.cuteness %></td>
     <td><%= @kitten.softness %></td>
   </tr>
-</table>
+</table><br><br>
+
+<%= link_to "Back to kittens", kittens_path %><br>
+<%= link_to "Edit", edit_kitten_path(@kitten) %><br>
+<%= link_to "Delete", kitten_path(@kitten), method: :delete, data: { confirm: "Are you sure?" } %>
