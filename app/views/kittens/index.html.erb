@@ -9,10 +9,13 @@
   </tr>
   <% @kittens.each do |kitten| %>
     <tr>
-      <td><%= kitten.name %></td>
+      <td><%= link_to kitten.name, kitten_path(kitten) %></td>
       <td><%= kitten.age %></td>
       <td><%= kitten.cuteness %></td>
       <td><%= kitten.softness %></td>
+      <td><%= link_to "Delete", kitten_path(kitten), method: :delete, data: { confirm: "Are you sure?" } %></td>
     </tr>
   <% end %>
-</table>
+</table><br><br>
+
+<%= link_to "Create kitten", new_kitten_path %>
